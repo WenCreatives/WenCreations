@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wen Creatives</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #080808;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Header Section */
+        #header {
+            padding: 20px 5%;
+        }
+
+        .top-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 140px;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-menu li {
+            margin: 0 15px;
+        }
+
+        .nav-menu li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .nav-menu li a:hover {
+            color: #ff004f;
+        }
+
+        .header-text {
+            text-align: center;
+            margin-top: 5%;
+        }
+
+        .header-text h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .header-text p {
+            font-size: 1.2rem;
+        }
+
+        /* Portfolio Section */
+        #portfolio {
+            padding: 50px 5%;
+            text-align: center;
+            background: #111;
+        }
+
+        #portfolio h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05);
+        }
+
+        .portfolio-item .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .portfolio-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .portfolio-item .overlay p {
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        /* Footer Section */
+        footer {
+            padding: 20px 5%;
+            text-align: center;
+            background: #111;
+            color: #aaa;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                background: rgba(0, 0, 0, 0.8);
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .social-media {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icon {
+            color: #fff;
+            font-size: 20px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #111;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-icon:hover {
+            background: #ff004f;
+            color: #fff;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header id="header">
+        <div class="top-header">
+            <img src="Wen Creatives o Background copy.png" alt="Wen Creatives Logo" class="logo">
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <span class="hamburger" aria-label="Toggle Menu">&#9776;</span>
+            </nav>
+        </div>
+        <div class="header-text">
+            <h1>Welcome to Wen Creatives</h1>
+            <p>We specialize in crafting cutting-edge websites and applications tailored to your business needs.</p>
+        </div>
+    </header>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <h2>My Work</h2>
+        <div class="portfolio-grid">
+            <!-- Project 1 -->
+            <div class="portfolio-item">
+                <img src="Craft a Stunning Responsive Business Website with Elementor Pro in WordPress.jpg" alt="Project 1">
+                <div class="overlay">
+                    <p>Project 1 Description</p>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="portfolio-item">
+                <img src="Furni - Furniture eCommerce Website Template by Untree_co.jpg" alt="Project 2">
+                <div class="overlay">
+                    <p>Project 2 Description</p>
+                </div>
+            </div>
+
+            <!-- New Project -->
+            <div class="portfolio-item">
+                <img src="Restaurant Website Design Service.jpeg" alt="New Project">
+                <div class="overlay">
+                    <p>New Project Description</p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Wen Creatives. All Rights Reserved.</p>
+        <div class="social-media">
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        }
+
+        document.querySelector('.hamburger').addEventListener('click', toggleMenu);
+    </script>
+
+   
+</body>
+</html>
