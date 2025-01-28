@@ -3,206 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wen Creatives</title>
+    <title>About Me - Wen Creatives</title>
     <link rel="stylesheet" href="styles.css">
-    <link
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <script defer src="script.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
     <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
         body {
             background: #080808;
             color: #fff;
-            line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
-        /* Header Section */
-        #header {
-            height: 100vh;
-            background-image: url('luca-bravo-9l_326FISzk-unsplash.jpg'); 
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 20px 5%;
-            position: relative;
-        }
-
-        #header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
-
-        .top-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            z-index: 2; /* Ensure navigation is above overlay */
-        }
-
-        .logo {
-            width: 140px;
-        }
-
-        .hamburger {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: #fff;
+        header {
+            padding: 20px;
+            text-align: center;
+            background: #111;
         }
 
         .nav-menu {
-            display: flex;
             list-style: none;
-            align-items: center;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
 
         .nav-menu li {
-            margin: 0 15px;
+            display: inline;
         }
 
-        .nav-menu li a {
+        .nav-menu a {
             color: #fff;
             text-decoration: none;
             font-size: 18px;
             transition: color 0.3s;
         }
 
-        .nav-menu li a:hover {
+        .nav-menu a:hover {
             color: #ff004f;
         }
 
-        .nav-menu.active {
-            display: flex; /* Display menu when active */
+        #about {
+            display: flex;
             flex-direction: column;
-            background: #111;
-            position: absolute;
-            top: 60px;
-            right: 20px;
-            width: 200px;
-            padding: 10px;
-            border-radius: 8px;
-        }
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-
-            .hamburger {
-                display: block;
-            }
-        }
-
-        .header-text {
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
             text-align: center;
-            margin-top: 5%;
-            position: relative;
-            z-index: 2;
-        }
-
-        .header-text h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-
-        .header-text p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: #ff004f;
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
-            transition: background 0.3s;
-        }
-
-        .cta-button:hover {
-            background: #e60043;
-        }
-
-
-
-        /* Services Section */
-        #services {
             padding: 50px 5%;
-            text-align: center;
-            background: #080808;
         }
 
-        #services h2 {
-            font-size: 2rem;
+        #about h2 {
+            font-size: 2.5rem;
             margin-bottom: 20px;
+            color: #ffffff;
         }
 
-        .services-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .services-list div {
-            background: #262626;
-            padding: 20px;
-            border-radius: 8px;
-            transition: transform 0.3s, background 0.3s;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .services-list div:hover {
-            background: #ff004f;
-            transform: scale(1.05);
-        }
-
-        .services-list h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-
-        .services-list p {
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
-        .service-image {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            transition: transform 0.3s;
-        }
-
-        .services-list div:hover .service-image {
-            transform: scale(1.1);
-        }
-
-        /* Footer */
-        footer {
-            padding: 20px 5%;
-            text-align: center;
-            background: #111;
+        #about p {
+            font-size: 1rem;
             color: #aaa;
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
 
         .social-media {
@@ -250,81 +126,63 @@
             background: #ff004f;
             color: #fff;
             transform: scale(1.2);}
+        footer {
+            background: #111;
+            text-align: center;
+            padding: 10px;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            #about h2 {
+                font-size: 2rem;
+            }
+
+            .profile {
+                flex-direction: column;
+            }
+
+            .profile img {
+                margin-bottom: 20px;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header id="header">
-        <div class="top-header">
-            <a href="index.html" >
-        <img src="Wen Creatives o Background copy.png" alt="Wen Creatives Logo" class="logo">
-            </a>
-            
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                <span class="hamburger">&#9776;</span>
-            </nav>
-        </div>
-        <div class="header-text">
-            <h1>Welcome to Wen Creatives</h1>
-            <p>We specialize in crafting cutting-edge websites and applications tailored to your business needs.</p>
-            <a href="#services" class="cta-button">Learn More</a>
-        </div>
+    <header>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Services Section -->
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="services-list">
-            <div>
-                <img src="app.webp" alt="Web Design" class="service-image">
-                <h3>Web Design</h3>
-                <p>We create visually stunning websites tailored to your audience.</p>
-            </div>
-            <div>
-                <img src="graph.webp" alt="Creative Content Design" class="service-image">
-                <h3>Graphic Design</h3>
-                <p>Enhance your website's visibility and drive organic traffic.</p>
-            </div>
-            <div>
-                <img src="brand.webp" alt="Brand Identity" class="service-image">
-                <h3>Brand Identity</h3>
-                <p>Build a brand that resonates with your customers.</p>
-            </div>
-            <div>
-                <img src="Appdev.webp" alt="App Development" class="service-image">
-                <h3>App Development</h3>
-                <p>Custom mobile and web apps to meet your business goals.</p>
-            </div>
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="profile">
+            <img src="about profile.png" alt="Your Name">
+            <p>Hi! I'm <strong>Wen Creatiives</strong>, the creative mind behind Wen Creatives. I specialize in designing websites and crafting digital experiences tailored to your needs. My passion lies in transforming ideas into visually captivating and functional designs that make a lasting impression.</p>
         </div>
+        <p>With years of experience in web design, graphic design, and app development, I aim to bring innovative solutions to every project. Let's work together to create something extraordinary!</p>
     </section>
 
-    <!-- Footer Section -->
     <footer>
         <p>&copy; 2025 Wen Creatives. All Rights Reserved.</p>
         <div class="social-media">
             <a href="https://www.facebook.com/" class="social-icon" target="_blank"><i class="fab fa-facebook" ></i></a>
             <a href="https://www.twitter.com/" class="social-icon" target="_blank"><i class="fab fa-twitter" ></i></a>
             <a href="https://www.youtube.com/" class="social-icon" target="_blank"><i class="fab fa-youtube" ></i></a>
-            <a href="https://www.instagram.com/" class="social-icon" target="_blank"><i class="fab fa-instagram" ></i></a>
-                 
+            <a href="https://www.instagram.com/" class="social-icon" target="_blank"><i class="fab fa-instagram" ></i></a> 
             <a href="https://www.tiktok.com/@wencreatives?_t=ZM-8tI0U1FW1e2&_r=1" class="tiktok-icon" target="_blank">
                 <i class="fab fa-tiktok"></i>
             </a>
         </div>
     </footer>
-    <script>
-        document.querySelector('.hamburger').addEventListener('click', () => {
-            const navMenu = document.querySelector('.nav-menu');
-            navMenu.classList.toggle('active');
-        });
-    </script>
 </body>
 </html>
+
 
