@@ -257,7 +257,75 @@
 </head>
 <body>
     <!-- Header Section -->
-    <!-- Content remains unchanged -->
+    <header id="header" aria-label="Main Header">
+        <div class="top-header">
+            <a href="index.html">
+                <img src="Wen-Creatives-o-Background-copy.png" alt="Wen Creatives Logo" class="logo" width="140" height="auto">
+            </a>
+            <nav aria-label="Primary Navigation">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <button class="hamburger" aria-label="Toggle Navigation">&#9776;</button>
+            </nav>
+        </div>
+        <div class="header-text">
+            <h1>Welcome to Wen Creatives</h1>
+            <p>We specialize in crafting cutting-edge websites and applications tailored to your business needs.</p>
+            <a href="#services" class="cta-button">Learn More</a>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <main id="main-content">
+        <section id="services" aria-labelledby="services-heading">
+            <h2 id="services-heading">Our Services</h2>
+            <div class="services-list">
+                <article>
+                    <img src="app.webp" alt="Web Design Services" class="service-image">
+                    <h3>Web Design</h3>
+                    <p>We create visually stunning websites tailored to your audience.</p>
+                </article>
+                <article>
+                    <img src="graph.webp" alt="Creative Content Design Services" class="service-image">
+                    <h3>Graphic Design</h3>
+                    <p>Enhance your website's visibility and drive organic traffic.</p>
+                </article>
+                <article>
+                    <img src="brand.webp" alt="Brand Identity Services" class="service-image">
+                    <h3>Brand Identity</h3>
+                    <p>Build a brand that resonates with your customers.</p>
+                </article>
+                <article>
+                    <img src="Appdev.webp" alt="App Development Services" class="service-image">
+                    <h3>App Development</h3>
+                    <p>Custom mobile and web apps to meet your business goals.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer aria-label="Website Footer">
+        <p>&copy; 2025 Wen Creatives. All Rights Reserved.</p>
+        <div class="social-media">
+            <a href="https://www.facebook.com/" class="social-icon" aria-label="Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.twitter.com/" class="social-icon" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.youtube.com/" class="social-icon" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/" class="social-icon" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@wencreatives?_t=ZM-8tI0U1FW1e2&_r=1" class="tiktok-icon" aria-label="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </footer>
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
 
