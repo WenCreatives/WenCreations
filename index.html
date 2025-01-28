@@ -3,25 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Wen Creatives specializes in web design, graphic design, brand identity, and app development. Let us bring your ideas to life with cutting-edge technology.">
-    <meta name="keywords" content="web design, graphic design, app development, brand identity, Wen Creatives">
-    <meta name="author" content="Wen Creatives">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Wen Creatives | Web Design and Development">
-    <meta property="og:description" content="Explore professional web design, graphic design, and app development services by Wen Creatives.">
-    <meta property="og:image" content="https://yourwebsite.github.io/images/og-image.jpg">
-    <meta property="og:url" content="https://yourwebsite.github.io">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Wen Creatives | Web Design and Development">
-    <meta name="twitter:description" content="Explore professional web design, graphic design, and app development services by Wen Creatives.">
-    <meta name="twitter:image" content="https://yourwebsite.github.io/images/og-image.jpg">
-    <link rel="canonical" href="https://yourwebsite.github.io">
-    <title>Wen Creatives | Cutting-Edge Web Solutions</title>
+    <title>Wen Creatives</title>
+    <link rel="stylesheet" href="styles.css">
     <link
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="icon" href="favicon-16x16.png" type="image/png">
+    <script defer src="script.js"></script>
     <style>
         /* General Reset */
         * {
@@ -66,7 +53,7 @@
             justify-content: space-between;
             align-items: center;
             position: relative;
-            z-index: 2;
+            z-index: 2; /* Ensure navigation is above overlay */
         }
 
         .logo {
@@ -102,7 +89,7 @@
         }
 
         .nav-menu.active {
-            display: flex;
+            display: flex; /* Display menu when active */
             flex-direction: column;
             background: #111;
             position: absolute;
@@ -153,6 +140,8 @@
         .cta-button:hover {
             background: #e60043;
         }
+
+
 
         /* Services Section */
         #services {
@@ -239,30 +228,39 @@
 
         .social-icon:hover {
             background: #ff004f;
+            color: #fff;
             transform: scale(1.2);
         }
 
-        .tiktok-icon {
+        .tiktok-icon{
+    color: #fff;
             font-size: 20px;
+            width: 40px;
+            height: 40px;
             display: flex;
             justify-content: center;
             align-items: center;
-        }
+            background: #111;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-        .tiktok-icon:hover {
+.tiktok-icon:hover {
             background: #ff004f;
-            transform: scale(1.2);
-        }
+            color: #fff;
+            transform: scale(1.2);}
     </style>
 </head>
 <body>
     <!-- Header Section -->
-    <header id="header" aria-label="Main Header">
+    <header id="header">
         <div class="top-header">
-            <a href="index.html">
-                <img src="Wen-Creatives-o-Background-copy.png" alt="Wen Creatives Logo" class="logo" width="140" height="auto">
+            <a href="index.html" >
+        <img src="Wen Creatives o Background copy.png" alt="Wen Creatives Logo" class="logo">
             </a>
-            <nav aria-label="Primary Navigation">
+            
+            <nav>
                 <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
@@ -270,7 +268,7 @@
                     <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
-                <button class="hamburger" aria-label="Toggle Navigation">&#9776;</button>
+                <span class="hamburger">&#9776;</span>
             </nav>
         </div>
         <div class="header-text">
@@ -281,43 +279,44 @@
     </header>
 
     <!-- Services Section -->
-    <main id="main-content">
-        <section id="services" aria-labelledby="services-heading">
-            <h2 id="services-heading">Our Services</h2>
-            <div class="services-list">
-                <article>
-                    <img src="app.webp" alt="Web Design Services" class="service-image">
-                    <h3>Web Design</h3>
-                    <p>We create visually stunning websites tailored to your audience.</p>
-                </article>
-                <article>
-                    <img src="graph.webp" alt="Creative Content Design Services" class="service-image">
-                    <h3>Graphic Design</h3>
-                    <p>Enhance your website's visibility and drive organic traffic.</p>
-                </article>
-                <article>
-                    <img src="brand.webp" alt="Brand Identity Services" class="service-image">
-                    <h3>Brand Identity</h3>
-                    <p>Build a brand that resonates with your customers.</p>
-                </article>
-                <article>
-                    <img src="Appdev.webp" alt="App Development Services" class="service-image">
-                    <h3>App Development</h3>
-                    <p>Custom mobile and web apps to meet your business goals.</p>
-                </article>
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-list">
+            <div>
+                <img src="app.webp" alt="Web Design" class="service-image">
+                <h3>Web Design</h3>
+                <p>We create visually stunning websites tailored to your audience.</p>
             </div>
-        </section>
-    </main>
+            <div>
+                <img src="graph.webp" alt="Creative Content Design" class="service-image">
+                <h3>Graphic Design</h3>
+                <p>Enhance your website's visibility and drive organic traffic.</p>
+            </div>
+            <div>
+                <img src="brand.webp" alt="Brand Identity" class="service-image">
+                <h3>Brand Identity</h3>
+                <p>Build a brand that resonates with your customers.</p>
+            </div>
+            <div>
+                <img src="Appdev.webp" alt="App Development" class="service-image">
+                <h3>App Development</h3>
+                <p>Custom mobile and web apps to meet your business goals.</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer Section -->
-    <footer aria-label="Website Footer">
+    <footer>
         <p>&copy; 2025 Wen Creatives. All Rights Reserved.</p>
         <div class="social-media">
-            <a href="https://www.facebook.com/" class="social-icon" aria-label="Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.twitter.com/" class="social-icon" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.youtube.com/" class="social-icon" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.instagram.com/" class="social-icon" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@wencreatives?_t=ZM-8tI0U1FW1e2&_r=1" class="tiktok-icon" aria-label="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/" class="social-icon" target="_blank"><i class="fab fa-facebook" ></i></a>
+            <a href="https://www.twitter.com/" class="social-icon" target="_blank"><i class="fab fa-twitter" ></i></a>
+            <a href="https://www.youtube.com/" class="social-icon" target="_blank"><i class="fab fa-youtube" ></i></a>
+            <a href="https://www.instagram.com/" class="social-icon" target="_blank"><i class="fab fa-instagram" ></i></a>
+                 
+            <a href="https://www.tiktok.com/@wencreatives?_t=ZM-8tI0U1FW1e2&_r=1" class="tiktok-icon" target="_blank">
+                <i class="fab fa-tiktok"></i>
+            </a>
         </div>
     </footer>
     <script>
@@ -328,5 +327,4 @@
     </script>
 </body>
 </html>
-
 
