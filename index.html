@@ -204,52 +204,65 @@
             background: #111;
             color: #aaa;
         }
-
-        .social-media {
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .social-icon {
-            color: #fff;
-            font-size: 20px;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #111;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .social-icon:hover {
-            background: #ff004f;
-            color: #fff;
-            transform: scale(1.2);
-        }
-
-        .tiktok-icon{
-    color: #fff;
-            font-size: 20px;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #111;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* General Social Icon Styling */
+.social-icon {
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px; /* Rounded corners */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: white;
+    text-decoration: none;
 }
 
+/* Facebook */
+.social-icon[href*="facebook"] {
+    background: #1877F2;
+}
+
+/* Twitter */
+.social-icon[href*="twitter"] {
+    background: #1DA1F2;
+}
+
+/* YouTube */
+.social-icon[href*="youtube"] {
+    background: #FF0000;
+}
+
+/* Instagram - Gradient Background */
+.social-icon[href*="instagram"] {
+    background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+}
+
+/* TikTok - Gradient Background */
+.tiktok-icon {
+    background: linear-gradient(45deg, #69C9D0, #EE1D52, #000);
+    color: white;
+}
+
+/* Hover Effect */
+.social-icon:hover,
 .tiktok-icon:hover {
-            background: #ff004f;
-            color: #fff;
-            transform: scale(1.2);}
+    transform: scale(1.2);
+    filter: brightness(1.2);
+
+}
+
+.social-media {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center; /* Centers the icons */
+    align-items: center;
+    gap: 15px; /* Adds space between icons */
+}
+
+
+        
     </style>
 </head>
 <body>
@@ -311,11 +324,10 @@
         <div class="social-media">
             <a href="https://www.facebook.com/" class="social-icon" target="_blank"><i class="fab fa-facebook" ></i></a>
             <a href="https://www.twitter.com/" class="social-icon" target="_blank"><i class="fab fa-twitter" ></i></a>
-            <a href="https://www.youtube.com/" class="social-icon" target="_blank"><i class="fab fa-youtube" ></i></a>
+            <a href="https://www.youtube.com/@wen_creatives" class="social-icon" target="_blank"><i class="fab fa-youtube" ></i></a>
             <a href="https://www.instagram.com/" class="social-icon" target="_blank"><i class="fab fa-instagram" ></i></a>
+            <a href="https://www.tiktok.com/@wencreatives?lang=en" class="social-icon" target="_blank"><i class="fab fa-tiktok" ></i></a>
                  
-            <a href="https://www.tiktok.com/@wencreatives?_t=ZM-8tI0U1FW1e2&_r=1" class="tiktok-icon" target="_blank">
-                <i class="fab fa-tiktok"></i>
             </a>
         </div>
     </footer>
@@ -327,4 +339,3 @@
     </script>
 </body>
 </html>
-
