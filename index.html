@@ -8,27 +8,278 @@
     <link
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <script defer src="https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/11.3.0/firebase-firestore.js"></script>
     <script defer src="script.js"></script>
     <style>
-        /* Your styles remain the same */
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #080808;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Header Section */
+        #header {
+            height: 100vh;
+            background-image: url('luca-bravo-9l_326FISzk-unsplash.jpg'); 
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px 5%;
+            position: relative;
+        }
+
+        #header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .top-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 2; /* Ensure navigation is above overlay */
+        }
+
+        .logo {
+            width: 140px;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-menu li {
+            margin: 0 15px;
+        }
+
+        .nav-menu li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .nav-menu li a:hover {
+            color: #ff004f;
+        }
+
+        .nav-menu.active {
+            display: flex; /* Display menu when active */
+            flex-direction: column;
+            background: #111;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            width: 200px;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+
+        .header-text {
+            text-align: center;
+            margin-top: 5%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header-text h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .header-text p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff004f;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #e60043;
+        }
+
+
+
+        /* Services Section */
+        #services {
+            padding: 50px 5%;
+            text-align: center;
+            background: #080808;
+        }
+
+        #services h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .services-list div {
+            background: #262626;
+            padding: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s, background 0.3s;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .services-list div:hover {
+            background: #ff004f;
+            transform: scale(1.05);
+        }
+
+        .services-list h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .services-list p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .service-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: transform 0.3s;
+        }
+
+        .services-list div:hover .service-image {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            padding: 20px 5%;
+            text-align: center;
+            background: #111;
+            color: #aaa;
+        }
+/* General Social Icon Styling */
+.social-icon {
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px; /* Rounded corners */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: white;
+    text-decoration: none;
+}
+
+/* Facebook */
+.social-icon[href*="facebook"] {
+    background: #1877F2;
+}
+
+/* Twitter */
+.social-icon[href*="twitter"] {
+    background: #1DA1F2;
+}
+
+/* YouTube */
+.social-icon[href*="youtube"] {
+    background: #FF0000;
+}
+
+/* Instagram - Gradient Background */
+.social-icon[href*="instagram"] {
+    background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+}
+
+/* TikTok - Gradient Background */
+.tiktok-icon {
+    background: linear-gradient(45deg, #69C9D0, #EE1D52, #000);
+    color: white;
+}
+
+/* Hover Effect */
+.social-icon:hover,
+.tiktok-icon:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+
+}
+
+.social-media {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center; /* Centers the icons */
+    align-items: center;
+    gap: 15px; /* Adds space between icons */
+}
+
+
+        
     </style>
 </head>
 <body>
     <!-- Header Section -->
     <header id="header">
         <div class="top-header">
-            <a href="index.html">
-                <img src="Wen Creatives o Background copy.png" alt="Wen Creatives Logo" class="logo">
+            <a href="index.html" >
+        <img src="Wen Creatives o Background copy.png" alt="Wen Creatives Logo" class="logo">
             </a>
+            
             <nav>
                 <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="contact.html">Contact Me</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
                 <span class="hamburger">&#9776;</span>
             </nav>
@@ -39,17 +290,6 @@
             <a href="#services" class="cta-button">Learn More</a>
         </div>
     </header>
-
-    <h1>Mpesa Payment</h1>
-    <form id="payment-form">
-      <label for="phoneNumber">Phone Number:</label>
-      <input type="text" id="phoneNumber" placeholder="2547XXXXXXXX" required>
-  
-      <label for="amount">Amount:</label>
-      <input type="number" id="amount" placeholder="100" required>
-  
-      <button type="submit">Pay with Mpesa</button>
-    </form>
 
     <!-- Services Section -->
     <section id="services">
@@ -82,91 +322,19 @@
     <footer>
         <p>&copy; 2025 Wen Creatives. All Rights Reserved.</p>
         <div class="social-media">
-            <a href="https://www.facebook.com/" class="social-icon" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://x.com/WenCreatives" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.youtube.com/@wen_creatives" class="social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.instagram.com/wen_creatives_/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@wencreatives?lang=en" class="social-icon" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/" class="social-icon" target="_blank"><i class="fab fa-facebook" ></i></a>
+            <a href="https://www.twitter.com/" class="social-icon" target="_blank"><i class="fab fa-twitter" ></i></a>
+            <a href="https://www.youtube.com/@wen_creatives" class="social-icon" target="_blank"><i class="fab fa-youtube" ></i></a>
+            <a href="https://www.instagram.com/" class="social-icon" target="_blank"><i class="fab fa-instagram" ></i></a>
+            <a href="https://www.tiktok.com/@wencreatives?lang=en" class="social-icon" target="_blank"><i class="fab fa-tiktok" ></i></a>
+                 
+            </a>
         </div>
     </footer>
-
     <script>
-        // Firebase Configuration
-        // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyAedaXEMabA02DZ8tF4I4oHM3Ra7wJLTFs",
-  authDomain: "wencreatives-f245d.firebaseapp.com",
-  projectId: "wencreatives-f245d",
-  storageBucket: "wencreatives-f245d.firebasestorage.app",
-  messagingSenderId: "596766641272",
-  appId: "1:596766641272:web:51179cbf5a4b2f4d5db18d",
-  measurementId: "G-EVBZ4277WK"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-        // M-Pesa Payment
-        document.getElementById('payment-form').addEventListener('submit', async function (e) {
-            e.preventDefault();
-
-            const phoneNumber = document.getElementById('phoneNumber').value;
-            const amount = document.getElementById('amount').value;
-
-            // Validate inputs
-            if (!/^\d{12}$/.test(phoneNumber)) {
-                alert('Enter a valid phone number starting with 254.');
-                return;
-            }
-
-            if (amount <= 0) {
-                alert('Enter a valid amount.');
-                return;
-            }
-
-            // Disable button and show processing
-            const button = e.target.querySelector('button');
-            button.textContent = 'Processing...';
-            button.disabled = true;
-
-            try {
-                const response = await fetch('http://localhost:5000/mpesa-payment', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ phoneNumber, amount }),
-                });
-
-                const data = await response.json();
-                if (data.ResponseCode === '0') {
-                    alert('Payment initiated. Please check your phone for the payment prompt.');
-
-                    // Save payment details in Firestore
-                    await db.collection('payments').add({
-                        phoneNumber,
-                        amount,
-                        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-                    });
-                } else {
-                    alert('Error initiating payment: ' + data.errorMessage);
-                }
-            } catch (error) {
-                alert('Network error: ' + error.message);
-            } finally {
-                button.textContent = 'Pay with Mpesa';
-                button.disabled = false;
-            }
-        });
-
-        // Hamburger menu
         document.querySelector('.hamburger').addEventListener('click', () => {
-            document.querySelector('.nav-menu').classList.toggle('active');
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active');
         });
     </script>
 </body>
