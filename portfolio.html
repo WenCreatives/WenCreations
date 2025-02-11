@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wen Creatives</title>
+    <meta name="description" content="Explore Wen Creatives' portfolio of professional web design and development projects in Kenya. View our work in business websites, eCommerce platforms, and restaurant solutions.">
+    <meta name="keywords" content="web design portfolio, kenya web developer, website portfolio, business websites, ecommerce websites, restaurant websites, nairobi web design">
+    <meta name="author" content="Wen Creatives">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Portfolio - Wen Creatives | Professional Web Design & Development Projects">
+    <meta property="og:description" content="Browse through our collection of professional web design and development projects. See how we help businesses in Kenya establish their online presence.">
+    <meta property="og:image" content="Craft a Stunning Responsive Business Website with Elementor Pro in WordPress.jpg">
+    <meta property="og:url" content="https://wencreatives.com/portfolio">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Portfolio - Wen Creatives | Professional Web Design & Development Projects Kenya</title>
+    <link rel="canonical" href="https://wencreatives.com/portfolio">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <script src="script.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* General Reset */
         * {
             margin: 0;
             padding: 0;
@@ -17,103 +26,103 @@
         }
 
         body {
-            background: #080808;
+            background: #0a0a0a;
             color: #fff;
             line-height: 1.6;
         }
 
-        /* Header Section */
-        #header {
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
             padding: 20px 5%;
-        }
-
-        .top-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            width: 140px;
-        }
-
-        .hamburger {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: #fff;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
         }
 
         .nav-menu {
-            display: flex;
             list-style: none;
-            align-items: center;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
         }
 
         .nav-menu li {
-            margin: 0 15px;
+            display: inline;
         }
 
-        .nav-menu li a {
+        .nav-menu a {
             color: #fff;
             text-decoration: none;
-            font-size: 18px;
-            transition: color 0.3s;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
-        .nav-menu li a:hover {
-            color: #ff004f;
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #ff004f;
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s ease;
         }
 
-        .header-text {
-            text-align: center;
-            margin-top: 5%;
+        .nav-menu a:hover::after {
+            width: 100%;
         }
 
-        .header-text h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-
-        .header-text p {
-            font-size: 1.2rem;
-        }
-
-        /* Portfolio Section */
         #portfolio {
-            padding: 50px 5%;
-            text-align: center;
-            background: #111;
+            min-height: 100vh;
+            padding: 120px 5% 50px;
+            background: linear-gradient(to bottom, #0a0a0a, #111);
         }
 
-        #portfolio h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
+        #portfolio h1, #portfolio h2 {
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            background: linear-gradient(45deg, #fff, #ff004f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient 8s ease infinite;
         }
 
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px 0;
         }
 
         .portfolio-item {
             position: relative;
+            border-radius: 15px;
             overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 0, 79, 0.2);
         }
 
         .portfolio-item img {
             width: 100%;
-            height: 100%;
+            height: 250px;
             object-fit: cover;
-            border-radius: 8px;
+            transition: transform 0.4s ease;
         }
 
-        .portfolio-item:hover {
-            transform: scale(1.05);
+        .portfolio-item:hover img {
+            transform: scale(1.1);
         }
 
         .portfolio-item .overlay {
@@ -122,12 +131,15 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             opacity: 0;
-            transition: opacity 0.3s;
+            transition: all 0.4s ease;
+            padding: 20px;
         }
 
         .portfolio-item:hover .overlay {
@@ -137,140 +149,134 @@
         .portfolio-item .overlay p {
             color: #fff;
             font-size: 1.2rem;
-        }
-
-        /* Footer Section */
-        footer {
-            padding: 20px 5%;
             text-align: center;
-            background: #111;
-            color: #aaa;
+            transform: translateY(20px);
+            transition: transform 0.4s ease;
         }
 
-        /* Responsive Design */
+        .portfolio-item:hover .overlay p {
+            transform: translateY(0);
+        }
+
+        footer {
+            background: rgba(17, 17, 17, 0.98);
+            text-align: center;
+            padding: 30px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .social-icon, .tiktok-icon {
+            color: #fff;
+            font-size: 20px;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-icon:hover, .tiktok-icon:hover {
+            background: #ff004f;
+            color: #fff;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 0, 79, 0.3);
+        }
+
         @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-                flex-direction: column;
-                background: rgba(0, 0, 0, 0.8);
-                position: absolute;
-                top: 60px;
-                right: 0;
-                width: 100%;
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .hamburger {
-                display: block;
+            #portfolio h2 {
+                font-size: 2.5rem;
             }
 
             .portfolio-grid {
                 grid-template-columns: 1fr;
+                padding: 10px;
+            }
+
+            .nav-menu {
+                gap: 20px;
             }
         }
 
-        .social-media {
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .social-icon {
-            color: #fff;
-            font-size: 20px;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #111;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .social-icon:hover {
-            background: #ff004f;
-            color: #fff;
-            transform: scale(1.2);
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header id="header">
-        <div class="top-header">
-            <img src="Wen Creatives o Background copy.png" alt="Wen Creatives Logo" class="logo">
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                <span class="hamburger" aria-label="Toggle Menu">&#9776;</span>
-            </nav>
-        </div>
-        <div class="header-text">
-            <h1>Welcome to Wen Creatives</h1>
-            <p>We specialize in crafting cutting-edge websites and applications tailored to your business needs.</p>
-        </div>
+    <header>
+        <nav aria-label="Main navigation">
+            <ul class="nav-menu">
+                <li><a href="index.html" title="Home">Home</a></li>
+                <li><a href="about.html" title="About Us">About</a></li>
+                <li><a href="portfolio.html" title="Our Portfolio">Portfolio</a></li>
+                <li><a href="contact.html" title="Contact Us">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio">
-        <h2>My Work</h2>
-        <div class="portfolio-grid">
-            <!-- Project 1 -->
-            <div class="portfolio-item">
-                <img src="Craft a Stunning Responsive Business Website with Elementor Pro in WordPress.jpg" alt="Project 1">
-                <div class="overlay">
-                    <p>Project 1 Description</p>
+    <main>
+        <section id="portfolio" aria-label="Portfolio section">
+            <h1>Our Web Design & Development Portfolio</h1>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <a href="[ADD_BUSINESS_WEBSITE_LINK]" target="_blank" rel="noopener" aria-label="View Business Website Project">
+                        <img src="Craft a Stunning Responsive Business Website with Elementor Pro in WordPress.jpg" alt="Professional Business Website Design Example" width="300" height="250">
+                        <div class="overlay">
+                            <p>Modern Business Website with Elementor Pro</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="portfolio-item">
+                    <a href="[ADD_FURNITURE_WEBSITE_LINK]" target="_blank" rel="noopener" aria-label="View Furniture eCommerce Project">
+                        <img src="Furni - Furniture eCommerce Website Template by Untree_co.jpg" alt="Furniture eCommerce Website Design Example" width="300" height="250">
+                        <div class="overlay">
+                            <p>Elegant Furniture eCommerce Platform</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="portfolio-item">
+                    <a href="[ADD_RESTAURANT_WEBSITE_LINK]" target="_blank" rel="noopener" aria-label="View Restaurant Website Project">
+                        <img src="Restaurant Website Design Service.jpeg" alt="Restaurant Website Design Example" width="300" height="250">
+                        <div class="overlay">
+                            <p>Dynamic Restaurant Website Solution</p>
+                        </div>
+                    </a>
                 </div>
             </div>
+        </section>
+    </main>
 
-            <!-- Project 2 -->
-            <div class="portfolio-item">
-                <img src="Furni - Furniture eCommerce Website Template by Untree_co.jpg" alt="Project 2">
-                <div class="overlay">
-                    <p>Project 2 Description</p>
-                </div>
-            </div>
-
-            <!-- New Project -->
-            <div class="portfolio-item">
-                <img src="Restaurant Website Design Service.jpeg" alt="New Project">
-                <div class="overlay">
-                    <p>New Project Description</p>
-                </div>
-            </div>
-        </div>
-        
-    </section>
-
-    <!-- Footer Section -->
     <footer>
         <p>&copy; 2025 Wen Creatives. All Rights Reserved.</p>
-        <div class="social-media">
-            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <div class="social-media" aria-label="Social media links">
+            <a href="https://www.facebook.com/" class="social-icon" target="_blank" rel="noopener" aria-label="Visit our Facebook page"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://www.twitter.com/" class="social-icon" target="_blank" rel="noopener" aria-label="Visit our Twitter page"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            <a href="https://www.youtube.com/" class="social-icon" target="_blank" rel="noopener" aria-label="Visit our YouTube channel"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/" class="social-icon" target="_blank" rel="noopener" aria-label="Visit our Instagram page"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://www.tiktok.com/@wencreatives?_t=ZM-8tI0U1FW1e2&_r=1" class="tiktok-icon" target="_blank" rel="noopener" aria-label="Visit our TikTok page">
+                <i class="fab fa-tiktok" aria-hidden="true"></i>
+            </a>
         </div>
     </footer>
-
-    <script>
-        function toggleMenu() {
-            document.querySelector('.nav-menu').classList.toggle('active');
-        }
-
-        document.querySelector('.hamburger').addEventListener('click', toggleMenu);
-    </script>
-
-   
 </body>
 </html>
