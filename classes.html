@@ -3,401 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional web development and digital marketing classes by Wen Creatives. Learn WordPress, coding, and social media marketing from industry experts in Kenya.">
-    <meta name="keywords" content="web development classes, WordPress training, coding classes, social media marketing courses, digital skills training, Kenya">
-    <meta name="author" content="Wen Creatives">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Professional Web Development & Digital Marketing Classes | Wen Creatives">
-    <meta property="og:description" content="Master web development and digital marketing with our expert-led classes. Learn WordPress, coding, and social media marketing strategies.">
-    <meta property="og:image" content="DALL·E 2025-02-11 05.25.55 - A modern and professional cover image for an online class titled 'Website Designing Using WordPress.webp">
-    <meta property="og:url" content="https://wencreatives.com/classes">
-    <meta name="twitter:card" content="summary_large_image">
-    <title>Professional Web Development & Digital Marketing Classes | Wen Creatives Kenya</title>
-    <link rel="canonical" href="https://wencreatives.com/classes">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <title>Website Under Maintenance</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: Arial, sans-serif;
         }
-
         body {
-            background: #0a0a0a;
-            color: #fff;
-            line-height: 1.6;
-        }
-
-        header {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            padding: 20px 5%;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .nav-menu {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-        }
-
-        .nav-menu li {
-            display: inline;
-        }
-
-        .nav-menu a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        #classes {
-            min-height: 100vh;
-            padding: 120px 5% 50px;
-            background: linear-gradient(to bottom, #0a0a0a, #111);
-        }
-
-        #classes h2 {
-            font-size: 3.5rem;
-            text-align: center;
-            margin-bottom: 50px;
-            background: linear-gradient(45deg, #fff, #ff004f);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradient 8s ease infinite;
-        }
-
-        .classes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 20px 0;
-        }
-
-        .class-item {
-            background: rgba(38, 38, 38, 0.95);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            transition: all 0.4s ease;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .class-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(255, 0, 79, 0.2);
-            border-color: #ff004f;
-        }
-
-        .class-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .class-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .class-content {
-            padding: 25px;
-        }
-
-        .class-content h3 {
-            font-size: 1.4rem;
-            color: #ff004f;
-            margin-bottom: 15px;
-        }
-
-        .class-content p {
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 20px;
-        }
-
-        .enroll-btn {
-            display: inline-block;
-            padding: 12px 25px;
-            background: #ff004f;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .enroll-btn:hover {
-            background: #e60043;
-            transform: translateY(-2px);
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            z-index: 1001;
-        }
-
-        .modal-content {
-            position: relative;
-            background: #1a1a1a;
-            margin: 15% auto;
-            padding: 30px;
-            width: 90%;
-            max-width: 500px;
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .close {
-            position: absolute;
-            right: 20px;
-            top: 15px;
-            font-size: 24px;
-            cursor: pointer;
-            color: #fff;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #fff;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid rgba(255,255,255,0.2);
-            background: rgba(255,255,255,0.1);
-            color: #fff;
-        }
-
-        footer {
-            background: rgba(17, 17, 17, 0.98);
-            text-align: center;
-            padding: 30px 0;
-            backdrop-filter: blur(10px);
-        }
-
-        footer p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 20px;
-        }
-
-        .social-media {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-        }
-
-        .social-icon {
-            color: #fff;
-            font-size: 20px;
-            width: 45px;
-            height: 45px;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            transition: all 0.4s ease;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            height: 100vh;
+            background-color: #f4f4f4;
+            text-align: center;
         }
-
-        .social-icon:hover {
-            background: #ff004f;
-            color: #fff;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(255, 0, 79, 0.3);
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        h1 {
+            color: #d9534f;
+        }
+        p {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #555;
+        }
+        .loader {
+            margin: 20px auto;
+            width: 50px;
+            height: 50px;
+            border: 5px solid #ccc;
+            border-top: 5px solid #d9534f;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav aria-label="Main navigation">
-            <ul class="nav-menu">
-                <li><a href="index.html" title="Home">Home</a></li>
-                <li><a href="about.html" title="About Us">About</a></li>
-                <li><a href="portfolio.html" title="Our Portfolio">Portfolio</a></li>
-                <li><a href="contact.html" title="Contact Us">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section id="classes" aria-label="Available classes">
-            <h1>Professional Web Development & Digital Marketing Classes</h1>
-            <div class="classes-grid">
-                <article class="class-item">
-                    <img src="DALL·E 2025-02-11 05.25.55 - A modern and professional cover image for an online class titled 'Website Designing Using WordPress.' The design should feature a sleek laptop with a .webp" alt="Learn WordPress website development with our comprehensive classes" loading="lazy">
-                    <div class="class-content">
-                        <h2>WordPress Classes</h2>
-                        <p>Master website creation with WordPress. Learn theme customization, plugin management, and best practices for building professional websites.</p>
-                        <button onclick="showPaymentModal('WordPress Classes', 50000)" class="enroll-btn">Enroll Now - KES 50,000</button>
-                    </div>
-                </article>
-
-                <article class="class-item">
-                    <img src="DALL·E 2025-02-11 05.27.06 - A modern and professional cover image for an online class titled 'Coding Classes.' The design should feature a sleek laptop with lines of colorful cod.webp" alt="Professional web development and coding training courses" loading="lazy">
-                    <div class="class-content">
-                        <h2>Coding Classes</h2>
-                        <p>From HTML to JavaScript, learn modern web development. Build responsive websites and interactive web applications from scratch.</p>
-                        <button onclick="showPaymentModal('Coding Classes', 75000)" class="enroll-btn">Enroll Now - KES 75,000</button>
-                    </div>
-                </article>
-
-                <article class="class-item">
-                    <img src="DALL·E 2025-02-11 05.28.45 - A modern and professional cover image for an online class titled 'Social Media Marketing Classes.' The design should feature a laptop and smartphone d.webp" alt="Comprehensive social media marketing training courses" loading="lazy">
-                    <div class="class-content">
-                        <h2>Social Media Marketing</h2>
-                        <p>Learn to create engaging content, grow your audience, and drive engagement across all major social media platforms.</p>
-                        <button onclick="showPaymentModal('Social Media Marketing', 45000)" class="enroll-btn">Enroll Now - KES 45,000</button>
-                    </div>
-                </article>
-            </div>
-        </section>
-    </main>
-
-    <!-- Payment Modal -->
-    <div id="paymentModal" class="modal" aria-labelledby="modalTitle" aria-modal="true" role="dialog">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()" aria-label="Close modal">&times;</span>
-            <h3 id="modalTitle" style="margin-bottom: 20px; color: #ff004f;"></h3>
-            <form id="paymentForm">
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" required aria-required="true">
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" required aria-required="true">
-                </div>
-                <div class="form-group">
-                    <label for="amount">Amount (KES)</label>
-                    <input type="number" id="amount" required aria-required="true">
-                </div>
-                <button type="button" onclick="payWithPaystack()" class="enroll-btn" style="width: 100%;">Pay Now</button>
-            </form>
-        </div>
+    <div class="container">
+        <h1>🚧 Website Under Maintenance 🚧</h1>
+        <p>We are making some improvements and will be back soon.</p>
+        <div class="loader"></div>
+        <p>Thank you for your patience! 😊</p>
     </div>
-
-    <footer>
-        <p>&copy; 2025 Wen Creatives. All Rights Reserved.</p>
-        <div class="social-media" aria-label="Social media links">
-            <a href="https://www.facebook.com/" class="social-icon" target="_blank" rel="noopener" aria-label="Visit our Facebook page">
-                <i class="fab fa-facebook" aria-hidden="true"></i>
-            </a>
-            <a href="https://www.twitter.com/" class="social-icon" target="_blank" rel="noopener" aria-label="Visit our Twitter page">
-                <i class="fab fa-twitter" aria-hidden="true"></i>
-            </a>
-            <a href="https://www.youtube.com/@wen_creatives" class="social-icon" target="_blank" rel="noopener" aria-label="Visit our YouTube channel">
-                <i class="fab fa-youtube" aria-hidden="true"></i>
-            </a>
-            <a href="https://www.instagram.com/" class="social-icon" target="_blank" rel="noopener" aria-label="Visit our Instagram page">
-                <i class="fab fa-instagram" aria-hidden="true"></i>
-            </a>
-            <a href="https://www.tiktok.com/@wencreatives?_t=ZM-8tI0U1FW1e2&_r=1" class="social-icon" target="_blank" rel="noopener" aria-label="Visit our TikTok page">
-                <i class="fab fa-tiktok" aria-hidden="true"></i>
-            </a>
-        </div>
-    </footer>
-
-    <script>
-        // Replace these values with your actual Paystack keys
-        const PAYSTACK_PUBLIC_KEY = 'pk_live_574f3fe773979c5ff4f7b13314980c236a10cd7a'; // Live Public Key
-        const PAYSTACK_SECRET_KEY = 'sk_live_c9fc8e5a4524357671290f8a504da26cde56872f'; // Live Secret Key
-    
-        let currentClass = '';
-        let currentAmount = 0; // Initialize amount to 0
-    
-        function showPaymentModal(className, amount) {
-            currentClass = className;
-            document.getElementById('modalTitle').textContent = className;
-            document.getElementById('amount').value = amount || ''; // Allow custom amount input
-            document.getElementById('paymentModal').style.display = 'block';
-        }
-    
-        function closeModal() {
-            document.getElementById('paymentModal').style.display = 'none';
-        }
-    
-        function payWithPaystack() {
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            currentAmount = parseFloat(document.getElementById('amount').value);
-
-            if (!currentAmount || currentAmount <= 0) {
-                alert('Please enter a valid amount');
-                return;
-            }
-    
-            let handler = PaystackPop.setup({
-                key: PAYSTACK_PUBLIC_KEY,
-                email: email,
-                amount: currentAmount * 100, // Paystack expects amount in cents
-                currency: 'KES',
-                ref: 'WC' + Math.floor((Math.random() * 1000000000) + 1),
-                metadata: {
-                    custom_fields: [
-                        {
-                            display_name: "Phone Number",
-                            variable_name: "phone_number",
-                            value: phone
-                        },
-                        {
-                            display_name: "Class",
-                            variable_name: "class_name",
-                            value: currentClass
-                        }
-                    ]
-                },
-                callback: function(response) {
-                    // Redirect to course content page after successful payment
-                    window.location.href = `course-content.html?class=${encodeURIComponent(currentClass)}&ref=${response.reference}`;
-                },
-                onClose: function() {
-                    alert('Transaction was not completed, window closed.');
-                }
-            });
-            handler.openIframe();
-        }
-    
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            if (event.target == document.getElementById('paymentModal')) {
-                closeModal();
-            }
-        }
-    </script>
 </body>
 </html>
+
