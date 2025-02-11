@@ -31,11 +31,12 @@
             background: #0a0a0a;
             color: #fff;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         /* Header Section */
         #header {
-            height: 100vh;
+            min-height: 100vh;
             background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), var(--bg-image, url('luca-bravo-9l_326FISzk-unsplash.jpg'));
             background-size: cover;
             background-position: center;
@@ -48,7 +49,6 @@
             transition: background-image 0.5s ease-in-out;
         }
 
-        /* Rest of the styles remain unchanged */
         .top-header {
             display: flex;
             justify-content: space-between;
@@ -65,8 +65,15 @@
         }
 
         .logo {
-            width: 140px;
+            width: 120px;
+            height: auto;
             transition: transform 0.3s ease;
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                width: 100px;
+            }
         }
 
         .logo:hover {
@@ -78,79 +85,62 @@
             font-size: 24px;
             cursor: pointer;
             color: #fff;
+            z-index: 1001;
         }
 
         .nav-menu {
             display: flex;
             list-style: none;
             align-items: center;
-        }
-
-        .nav-menu li {
-            margin: 0 20px;
-        }
-
-        .nav-menu li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 500;
-            position: relative;
-            padding: 5px 0;
-        }
-
-        .nav-menu li a::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #ff004f;
-            transition: width 0.3s ease;
-        }
-
-        .nav-menu li a:hover::after {
-            width: 100%;
-        }
-
-        .nav-menu.active {
-            display: flex;
-            flex-direction: column;
-            background: rgba(17, 17, 17, 0.95);
-            backdrop-filter: blur(10px);
-            position: absolute;
-            top: 80px;
-            right: 20px;
-            width: 200px;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            gap: 20px;
         }
 
         @media (max-width: 768px) {
             .nav-menu {
-                display: none;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 100%;
+                background: rgba(10, 10, 10, 0.98);
+                flex-direction: column;
+                justify-content: center;
+                transition: 0.3s ease;
+                padding: 50px 0;
+            }
+
+            .nav-menu.active {
+                right: 0;
             }
 
             .hamburger {
                 display: block;
             }
 
-            .nav-menu.active li {
+            .nav-menu li {
                 margin: 15px 0;
             }
+        }
+
+        .nav-menu li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: clamp(14px, 2vw, 16px);
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
         }
 
         .header-text {
             text-align: center;
             margin-top: 15vh;
+            padding: 20px;
             position: relative;
             z-index: 2;
         }
 
         .header-text h1 {
-            font-size: 4rem;
+            font-size: clamp(2rem, 5vw, 4rem);
             margin-bottom: 20px;
             background: linear-gradient(45deg, #fff, #ff004f);
             -webkit-background-clip: text;
@@ -159,7 +149,7 @@
         }
 
         .header-text p {
-            font-size: 1.4rem;
+            font-size: clamp(1rem, 2vw, 1.4rem);
             margin-bottom: 30px;
             color: rgba(255,255,255,0.9);
         }
@@ -168,196 +158,86 @@
             display: inline-block;
             background: linear-gradient(45deg, #ff004f, #e60043);
             color: #fff;
-            padding: 15px 35px;
+            padding: clamp(10px, 2vw, 15px) clamp(20px, 4vw, 35px);
             text-decoration: none;
             border-radius: 30px;
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
             font-weight: 600;
-            margin: 20px 10px;
+            margin: 10px;
             position: relative;
             overflow: hidden;
             transition: all 0.4s ease;
             box-shadow: 0 5px 20px rgba(255, 0, 79, 0.4);
         }
 
-        .cta-button:hover, .join-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(255, 0, 79, 0.6);
+        @media (max-width: 480px) {
+            .cta-button, .join-button {
+                display: block;
+                margin: 15px auto;
+                max-width: 200px;
+            }
         }
 
-        /* Newsletter Section */
         .newsletter {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 30px;
-            border-radius: 15px;
-            margin: 40px auto;
+            width: 90%;
             max-width: 600px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .newsletter h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #ff004f;
-        }
-
-        .newsletter p {
-            margin-bottom: 20px;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .newsletter form {
-            display: flex;
-            gap: 10px;
-        }
-
-        .newsletter input[type="email"] {
-            flex: 1;
-            padding: 12px 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 25px;
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            font-size: 1rem;
-        }
-
-        .newsletter button {
-            padding: 12px 25px;
-            background: #ff004f;
-            border: none;
-            border-radius: 25px;
-            color: #fff;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .newsletter button:hover {
-            background: #e60043;
-            transform: translateY(-2px);
-        }
-
-        /* Services Section */
-        #services {
-            padding: 100px 5%;
-            text-align: center;
-            background: #0a0a0a;
-        }
-
-        #services h2 {
-            font-size: 3rem;
-            margin-bottom: 50px;
-            background: linear-gradient(45deg, #fff, #ff004f);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .services-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            margin: 40px auto;
             padding: 20px;
         }
 
-        .services-list div {
-            background: rgba(38, 38, 38, 0.95);
-            padding: 30px;
-            border-radius: 20px;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
+        .newsletter form {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
-        .services-list div:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(255,0,79,0.2);
-            border-color: #ff004f;
+        @media (max-width: 480px) {
+            .newsletter form {
+                flex-direction: column;
+            }
+            
+            .newsletter button {
+                width: 100%;
+            }
         }
 
-        .services-list h3 {
-            font-size: 1.4rem;
-            margin: 15px 0;
-            color: #ff004f;
+        .services-list {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 15px;
         }
 
-        .services-list p {
-            font-size: 1rem;
-            line-height: 1.7;
-            color: rgba(255,255,255,0.8);
-        }
-
-        .service-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 15px;
-            transition: transform 0.4s ease;
-        }
-
-        .services-list div:hover .service-image {
-            transform: scale(1.05);
-        }
-
-        /* Footer */
-        footer {
-            padding: 40px 5%;
-            background: rgba(17, 17, 17, 0.98);
-            color: #fff;
-            text-align: center;
-            position: relative;
-        }
-
-        footer p {
-            margin-bottom: 20px;
-            color: rgba(255,255,255,0.7);
+        @media (max-width: 768px) {
+            #services h2 {
+                font-size: 2.5rem;
+            }
         }
 
         .social-media {
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
-        .social-icon {
-            font-size: 20px;
-            width: 45px;
-            height: 45px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 12px;
-            transition: all 0.4s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            color: white;
-            text-decoration: none;
-            position: relative;
-            overflow: hidden;
+        @media (max-width: 480px) {
+            .social-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
         }
 
-        .social-icon::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255,255,255,0.1);
-            transform: translateX(-100%);
-            transition: transform 0.4s ease;
-        }
-
-        .social-icon:hover::before {
-            transform: translateX(0);
-        }
-
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        @media (max-width: 360px) {
+            body {
+                font-size: 14px;
+            }
+            
+            .header-text h1 {
+                font-size: 1.8rem;
+            }
+            
+            .header-text p {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -456,7 +336,6 @@
         document.getElementById('newsletterForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const email = this.email.value;
-            // You'll need to replace 'your-formspree-endpoint' in the form action with your actual Formspree endpoint
             fetch(this.action, {
                 method: 'POST',
                 body: JSON.stringify({ email: email }),
@@ -478,9 +357,17 @@
             });
         });
 
-        // To change background image, use:
-        // document.documentElement.style.setProperty('--bg-image', 'url("your-image-path.jpg")');
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-menu').classList.remove('active');
+            });
+        });
+
+        // Disable background scroll when mobile menu is open
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            document.body.style.overflow = document.querySelector('.nav-menu').classList.contains('active') ? 'hidden' : 'auto';
+        });
     </script>
 </body>
 </html>
-
