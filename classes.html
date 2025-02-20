@@ -148,11 +148,21 @@
             transition: all 0.3s ease;
             cursor: pointer;
             font-size: 0.9rem;
+            animation: pop 1s infinite; /* Continuous popping animation */
+        }
+
+        @keyframes pop {
+            0%, 100% {
+                transform: scale(1); /* Original size */
+            }
+            50% {
+                transform: scale(1.1); /* Scale up */
+            }
         }
 
         .enroll-btn:hover {
             background: #e60043;
-            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 0, 79, 0.3); /* Shadow effect */
         }
 
         /* Modal Styles */
@@ -271,6 +281,9 @@
     <main>
         <section id="classes" aria-label="Available classes">
             <h1>Professional Web Development & Digital Marketing Classes</h1>
+            <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+                <button onclick="window.location.href='https://chat.whatsapp.com/DQvFoEsjL4h3IcTdh14aag'" class="enroll-btn">Join Our Free Class Today 9pm EAT</button>
+            </div>
             <div class="classes-grid">
                 <article class="class-item">
                     <img src="DALL·E 2025-02-11 05.25.55 - A modern and professional cover image for an online class titled 'Website Designing Using WordPress.' The design should feature a sleek laptop with a .webp" alt="Learn WordPress website development with our comprehensive classes" loading="lazy">
@@ -431,4 +444,3 @@ window.onclick = function(event) {
     </script>
 </body>
 </html>
-
